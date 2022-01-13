@@ -1,23 +1,41 @@
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #fff;
+  transition: all 0.3s;
+  border-right: 1px solid #e6ecf5;
+}
+
 #sidebar.active {
-    /* margin-left: -250px; */
-    min-width: 250px;
-    max-width: 250px;
-  }
-  
-  #sidebar .sidebar-header {
-    padding: 0.4rem 1rem;
-    border-bottom: 1px solid rgba(101, 109, 119, .16);
-    max-height: 55px;
-    min-height: 54px;
-  }
-  
-  #sidebar ul.components {
-    padding: 0 0;
-  }
-  
-  #sidebar ul li a {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    display: block;
-  }
+  /* margin-left: -250px; */
+  visibility: visible;
+}
+
+#sidebar .sidebar-header {
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid rgba(101, 109, 119, .16);
+  max-height: 55px;
+  min-height: 54px;
+}
+
+#sidebar .sidebar-header .brand {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#sidebar ul.components {
+  padding: 0 0;
+}
+
+#sidebar li:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+#sidebar ul li a {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  display: block;
+}
   

@@ -5,16 +5,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Home from './containers/home/Home';
-import Pickup from './containers/pickup/Pickup';
+import Profile from './containers/profile/Profile';
+import Login from './containers/login/Login';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <BrowserRouter>
-      <App />
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="pickup" element={<Pickup />} />
+          <Route path="home" elemement={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>,
