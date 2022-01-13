@@ -1,0 +1,23 @@
+#sidebar.active {
+    /* margin-left: -250px; */
+    min-width: 250px;
+    max-width: 250px;
+  }
+  
+  #sidebar .sidebar-header {
+    padding: 0.4rem 1rem;
+    border-bottom: 1px solid rgba(101, 109, 119, .16);
+    max-height: 55px;
+    min-height: 54px;
+  }
+  
+  #sidebar ul.components {
+    padding: 0 0;
+  }
+  
+  #sidebar ul li a {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    display: block;
+  }
+  
