@@ -1,9 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/Auth';
+import { RequireAuth } from './context/RequireAuth';
 import TopNavBar from './components/topnavbar/TopNavBar';
 import SideBar from './components/sidebar/SideBar';
+import Home from './containers/home/Home';
+import Profile from './containers/profile/Profile';
+import Login from './containers/login/Login';
+
 import './App.css';
 
 
@@ -16,7 +19,24 @@ function App() {
           <TopNavBar />
           <div className="content">
             <div className="container">
-              <Outlet />
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/home" elemement={
+                  <RequireAuth>
+                    <Home />
+                  </RequireAuth>
+                } />
+                <Route path="/profile" element={
+                  <RequireAuth>
+                    <Profile />
+                  </RequireAuth>
+                } />
+                <Route path="/" element={
+                  <RequireAuth>
+                    <Home />
+                  </RequireAuth>
+                } />
+              </Routes>
             </div>
           </div>
         </div>
