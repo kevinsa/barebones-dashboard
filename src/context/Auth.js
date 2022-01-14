@@ -16,17 +16,10 @@ function useAuth() {
         }
     }, []);
 
-    const login = (email, password) => {
-        return new Promise((res, rej) => {
-            setTimeout(() => {
-                const loggedInUser = { email };
-
-                setUser(loggedInUser);
-                setLoggedIn(true);
-                storageService.setUser(loggedInUser);
-                res()
-            }, 3000)
-        })
+    const login = (user) => {
+        setUser(user);
+        setLoggedIn(true);
+        storageService.setUser(user);
     }
 
     const logout = () => {
