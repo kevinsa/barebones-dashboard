@@ -12,34 +12,42 @@ import './App.css';
 
 function App() {
   return (
-    <div className="wrapper">
+    <div className="d-flex" id="wrapper">
       <AuthProvider>
+        {/* side bar */}
         <SideBar />
-        <div id="body">
+
+        {/* page contents wrap */}
+        <div id="page-content-wrapper">
+
+          {/* top navigation */}
           <TopNavBar />
-          <div className="content">
-            <div className="container">
-              <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/home" elemement={
-                  <RequireAuth>
-                    <Home />
-                  </RequireAuth>
-                } />
-                <Route path="/profile" element={
-                  <RequireAuth>
-                    <Profile />
-                  </RequireAuth>
-                } />
-                <Route path="/" element={
-                  <RequireAuth>
-                    <Home />
-                  </RequireAuth>
-                } />
-              </Routes>
-            </div>
+
+          {/* page contents */}
+          <div className="container-fluid">
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/home" elemement={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>
+              } />
+              <Route path="/profile" element={
+                <RequireAuth>
+                  <Profile />
+                </RequireAuth>
+              } />
+              <Route path="/" element={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>
+              } />
+            </Routes>
           </div>
+          {/* end page contents */}
+
         </div>
+        {/* end page contents wrap */}
       </AuthProvider>
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../context/Auth';
 import './TopNavBar.css';
 
@@ -14,10 +16,16 @@ const TopNavBar = (props) => {
       });
     }
     return (
-        <Navbar bg="white" expand="lg">
-            <Nav className="container-fluid">    
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <button className="btn btn-light" id="sidebarToggle">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
               { loggedIn &&
-              <NavDropdown title={user.email} id="user-dropdown" className="ms-auto">
+              <NavDropdown title={user.email} id="basic-nav-dropdown">
                 <NavDropdown.Item>
                   <Link to="profile">Profile</Link>
                 </NavDropdown.Item>
@@ -26,7 +34,9 @@ const TopNavBar = (props) => {
               </NavDropdown>
               }
             </Nav>
-        </Navbar>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     )
 };
 
