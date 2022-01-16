@@ -9,27 +9,29 @@ const SideBar = (props) => {
   const { loggedIn } = useAuth();
 
   return(
-    <Fragment>
+    <React.Fragment>
       { loggedIn &&
-        <nav id="sidebar" className="active">
-          <div className="sidebar-header">
-            <Link to="/">
-              <div className="brand">
-              <FontAwesomeIcon icon={faSkullCrossbones} /> barebones
-              </div>
-            </Link>
-          </div>
-          
-          <ul className="list-unstyled components text-secondary">
-            <li><Link to="/"><FontAwesomeIcon icon={faHome} />&nbsp;&nbsp;Home</Link></li>
-            <li><Link to="/"><FontAwesomeIcon icon={faDog} />&nbsp;&nbsp;Dogs</Link></li>
-            <li><Link to="/"><FontAwesomeIcon icon={faCat} />&nbsp;&nbsp;Cats</Link></li>
-            <li><Link to="/"><FontAwesomeIcon icon={faCarrot} />&nbsp;&nbsp;Rabbits</Link></li>
-          </ul>
-        </nav>
+      <div className="border-end bg-white" id="sidebar-wrapper">
+        <div className="sidebar-heading border-bottom bg-light">
+          <FontAwesomeIcon icon={faSkullCrossbones} />&nbsp;barebones
+        </div>
+        <div className="list-group list-group-flush">
+          <Link to="/" className="list-group-item list-group-item-action list-group-item-light p-3">
+            <FontAwesomeIcon icon={faHome} />&nbsp;&nbsp;Home
+          </Link>
+          <Link to="/" className="list-group-item list-group-item-action list-group-item-light p-3">
+            <FontAwesomeIcon icon={faDog} />&nbsp;&nbsp;Dogs
+          </Link>
+          <Link to="/" className="list-group-item list-group-item-action list-group-item-light p-3">
+            <FontAwesomeIcon icon={faCat} />&nbsp;&nbsp;Cats
+          </Link>
+          <Link to="/" className="list-group-item list-group-item-action list-group-item-light p-3">
+            <FontAwesomeIcon icon={faCarrot} />&nbsp;&nbsp;Rabbits
+          </Link>
+        </div>
+      </div>
       }
-    </Fragment>
-      
+    </React.Fragment>
   )
 };
 

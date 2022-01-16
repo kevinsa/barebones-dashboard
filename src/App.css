@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
-#body {
-  width: 100%;
-  padding: 0;
-  min-height: 100vh;
-  transition: all 0.3s;
+/*
+body.sb-sidenav-toggled #root #wrapper #sidebar-wrapper {
+  margin-left: 0;
 }
+*/
 
-#body>.navbar {
-  padding: 0 1.5rem;
-  min-height: 54px;
-  box-shadow: none;
-  border-bottom: 1px solid rgba(101, 109, 119, .16);
-}
-
-#body>.content {
-  position: relative;
-  padding: 0.5rem;
-}
-
-.wrapper {
-  display: flex;
-  width: 100%;
-  align-items: stretch;
+#wrapper {
   overflow-x: hidden;
+}
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+@media (min-width: 768px) {
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /*
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+  */
 }
