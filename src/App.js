@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/Auth';
 import { RequireAuth } from './context/RequireAuth';
@@ -6,11 +7,15 @@ import SideBar from './components/sidebar/SideBar';
 import Home from './containers/home/Home';
 import Profile from './containers/profile/Profile';
 import Login from './containers/login/Login';
-
 import './App.css';
 
 
 function App() {
+
+  const handleSideToggle = () => {
+    document.body.classList.toggle('sb-sidenav-toggled');
+  };
+
   return (
     <div className="d-flex" id="wrapper">
       <AuthProvider>
@@ -21,7 +26,7 @@ function App() {
         <div id="page-content-wrapper">
 
           {/* top navigation */}
-          <TopNavBar />
+          <TopNavBar handleSideToggle={handleSideToggle} />
 
           {/* page contents */}
           <div className="container-fluid">
