@@ -13,6 +13,7 @@ import './App.css';
 function App() {
 
   const handleSideToggle = () => {
+    // improve this, we shouldnt mess with the DOM directly
     document.body.classList.toggle('sb-sidenav-toggled');
   };
 

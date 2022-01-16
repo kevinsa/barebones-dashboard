@@ -23,9 +23,11 @@ const TopNavBar = (props) => {
     return (
       <Navbar bg="light" expand="lg">
         <Container>
+          { loggedIn &&
           <button className="btn btn-light" id="sidebarToggle" onClick={onSideToggle}>
             <FontAwesomeIcon icon={faBars} />
           </button>
+          }
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
