@@ -14,13 +14,20 @@ const TopNavBar = (props) => {
       logout().then(() => {
         navigate("/login")
       });
-    }
+    };
+
+    const onSideToggle = () => {
+      props.handleSideToggle();
+    };
+
     return (
       <Navbar bg="light" expand="lg">
         <Container>
-          <button className="btn btn-light" id="sidebarToggle">
+          { loggedIn &&
+          <button className="btn btn-light" id="sidebarToggle" onClick={onSideToggle}>
             <FontAwesomeIcon icon={faBars} />
           </button>
+          }
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
